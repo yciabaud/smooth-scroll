@@ -370,7 +370,7 @@
 		var animateSettings = extend( settings || defaults, options || {}, overrides ); // Merge user options with defaults
 
 		// Lookup for parent container or fallback to document
-		var container = (animateSettings.selectorContainer && getClosest(toggle, animateSettings.selectorContainer)) || document.body;
+		var container = (animateSettings.containerSelector && getClosest(toggle, animateSettings.containerSelector)) || document.body;
 		// Lookup for fixed header in the current container
 		var fixedHeader = animateSettings.selectorHeader ? container.querySelector( settings.selectorHeader ) : null; // Get the header
 		var headerHeight = getHeaderHeight( fixedHeader );
@@ -380,7 +380,9 @@
 		var anchorElem = isNum || !anchor.tagName ? null : anchor;
 		if ( !isNum && !anchorElem ) return;
 		var startLocation = getPosition(toggle); // Current location on the container
+		console.log('startLocation', startLocation);
 		var endLocation = isNum ? anchor : getEndLocation( anchorElem, container, headerHeight, parseInt(animateSettings.offset, 10) ); // Location to scroll to
+		console.log('endLocation', endLocation);
 		var distance = endLocation - startLocation; // distance to travel
 		var containerHeight = getHeight(container);
 		var timeLapsed = 0;
