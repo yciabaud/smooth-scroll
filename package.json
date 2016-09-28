@@ -10,7 +10,7 @@
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "http://github.com/cferdinandi/smooth-scroll"
+		"url": "http://github.com/yciabaud/smooth-scroll"
 	},
 	"devDependencies": {
 		"gulp": "^3.9.1",
